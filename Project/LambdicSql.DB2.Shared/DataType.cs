@@ -1,7 +1,7 @@
 ﻿using LambdicSql.ConverterServices;
 using LambdicSql.ConverterServices.SymbolConverters;
 
-namespace LambdicSql.Oracle
+namespace LambdicSql.DB2
 {
     /// <summary>
     /// Data type.

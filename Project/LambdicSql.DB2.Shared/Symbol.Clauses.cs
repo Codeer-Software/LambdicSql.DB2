@@ -2,8 +2,14 @@ using LambdicSql.ConverterServices;
 using LambdicSql.ConverterServices.SymbolConverters;
 using LambdicSql.Specialized.SymbolConverters;
 
-namespace LambdicSql.Oracle
+namespace LambdicSql.DB2
 {
+    //TODO Delete top
+    /// <summary>
+    /// TOP keyword.
+    /// </summary>
+    public abstract class TopElement { }
+
     /// <summary>
     /// SQL Symbol.
     /// It can only be used within lambda of the LambdicSql.

@@ -2,7 +2,7 @@ using LambdicSql.ConverterServices;
 using LambdicSql.ConverterServices.SymbolConverters;
 using System;
 
-namespace LambdicSql.Oracle
+namespace LambdicSql.DB2
 {
     /// <summary>
     /// SQL Symbols.

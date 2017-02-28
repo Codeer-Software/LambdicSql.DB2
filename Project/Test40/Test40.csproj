@@ -43,8 +43,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="IBM.Data.DB2, Version=9.7.4.4, Culture=neutral, PublicKeyToken=7c307b91aa13d208, processorArchitecture=x86" />
-    <Reference Include="LambdicSql, Version=0.33.0.0, Culture=neutral, PublicKeyToken=fecca4a4d7d40901, processorArchitecture=MSIL">
-      <HintPath>..\packages\LambdicSql.0.33.0\lib\net35\LambdicSql.dll</HintPath>
+    <Reference Include="LambdicSql, Version=0.35.0.0, Culture=neutral, PublicKeyToken=fecca4a4d7d40901, processorArchitecture=MSIL">
+      <HintPath>..\packages\LambdicSql.0.35.0\lib\net35\LambdicSql.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -73,6 +73,7 @@
     <Compile Include="Helper\HelperForTest.cs" />
     <Compile Include="Helper\TestEnvironment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestDataType.cs" />
     <Compile Include="TestSymbolClausesCase.cs" />
     <Compile Include="TestSymbolClausesCondition.cs" />
     <Compile Include="TestSymbolClausesDataChange.cs" />
@@ -88,6 +89,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LambdicSql.DB2\LambdicSql.DB2.csproj">
+      <Project>{335592c4-241d-4e16-94e0-b1a23fc279b9}</Project>
+      <Name>LambdicSql.DB2</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
