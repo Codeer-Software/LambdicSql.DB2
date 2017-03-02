@@ -12,6 +12,7 @@ LambdicSql from NuGet
     PM> Install-Package LambdicSql.DB2
 
 https://www.nuget.org/packages/LambdicSql.DB2/<br>
+
 Supported pratforms are
 - .NETFramework 3.5~
 - PCL
@@ -30,11 +31,6 @@ DapperAdapter.Assembly = typeof(Dapper.SqlMapper).Assembly;
 
 //.net standard
 DapperAdapter.Assembly = typeof(Dapper.SqlMapper).GetTypeInfo().Assembly;
-```
-## Featuring sqlite-net-pcl
-For PCL, recommend sqlite-net-pcl.
-
-    PM> Install-Package sqlite-net-pcl
 
 ## Quick Start.
 Standard code.
