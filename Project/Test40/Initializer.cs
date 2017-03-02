@@ -20,6 +20,7 @@ namespace Test
                 DropTables(conn);
                 conn.Execute(CreateStaff);
                 conn.Execute(CreateRemuneration);
+                conn.Execute(CreateData);
                 InsertData(conn);
             }
         }
@@ -35,6 +36,12 @@ namespace Test
             try
             {
                 conn.Execute(Db<DB>.Sql(db => DropTable(db.tbl_remuneration)));
+            }
+            catch { }
+
+            try
+            {
+                conn.Execute(Db<DB>.Sql(db => DropTable(db.tbl_data)));
             }
             catch { }
         }
@@ -53,6 +60,13 @@ namespace Test
                  new Column(db.tbl_remuneration.staff_id, DataType.Int(), NotNull()),
                  new Column(db.tbl_remuneration.payment_date, DataType.VarChar(50), NotNull()),
                  new Column(db.tbl_remuneration.money, DataType.Decimal(), NotNull())
+                 ));
+
+        static Sql CreateData = Db<DB>.Sql(db =>
+                 CreateTable(db.tbl_data,
+                     new Column(db.tbl_data.id, DataType.Int()),
+                     new Column(db.tbl_data.val1, DataType.Int()),
+                     new Column(db.tbl_data.val2, DataType.Char(10))
                  ));
 
         static void InsertData(IDbConnection conn)
