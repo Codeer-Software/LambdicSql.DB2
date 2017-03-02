@@ -1,6 +1,5 @@
 ﻿using LambdicSql.ConverterServices;
 using LambdicSql.ConverterServices.SymbolConverters;
-using LambdicSql.Specialized.SymbolConverters;
 using System;
 
 namespace LambdicSql.DB2
@@ -70,21 +69,21 @@ namespace LambdicSql.DB2
         /// CURREN_TDATE Keyword.
         /// </summary>
         /// <returns>Date of executing SQL.</returns>
-        [CurrentDateTimeConverter(Name = "DATE")]
+        [ClauseStyleConverter(Name = "CURRENT DATE")]
         public static DateTime Current_Date() { throw new InvalitContextException(nameof(Current_Date)); }
 
         /// <summary>
         /// CURRENT_TIME Keyword.
         /// </summary>
         /// <returns>Date of executing SQL.</returns>
-        [CurrentDateTimeConverter(Name = "TIME")]
+        [ClauseStyleConverter(Name = "CURRENT TIME")]
         public static TimeSpan Current_Time() { throw new InvalitContextException(nameof(Current_Time)); }
 
         /// <summary>
         /// CURRENT_TIMESTAMP Keyword.
         /// </summary>
         /// <returns>Date and time of executing SQL.</returns>
-        [CurrentDateTimeConverter(Name = "TIMESTAMP")]
+        [ClauseStyleConverter(Name = "CURRENT TIMESTAMP")]
         public static DateTime Current_TimeStamp() { throw new InvalitContextException(nameof(Current_TimeStamp)); }
     }
 }

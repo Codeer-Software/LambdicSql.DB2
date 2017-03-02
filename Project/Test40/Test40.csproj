@@ -43,8 +43,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="IBM.Data.DB2, Version=9.7.4.4, Culture=neutral, PublicKeyToken=7c307b91aa13d208, processorArchitecture=x86" />
-    <Reference Include="LambdicSql, Version=0.35.0.0, Culture=neutral, PublicKeyToken=fecca4a4d7d40901, processorArchitecture=MSIL">
-      <HintPath>..\packages\LambdicSql.0.35.0\lib\net35\LambdicSql.dll</HintPath>
+    <Reference Include="LambdicSql, Version=0.36.0.0, Culture=neutral, PublicKeyToken=fecca4a4d7d40901, processorArchitecture=MSIL">
+      <HintPath>..\packages\LambdicSql.0.36.0\lib\net35\LambdicSql.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
