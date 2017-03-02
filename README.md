@@ -4,7 +4,7 @@
 ## Features ...
 LambdicSql is ultimate sql builder.<br>
 Generate sql text and parameters from lambda. <br>
-We represent as many DB2 clause and functions as possible in C #. <br>
+We will make it possible to represent as many DB2 clause and functions as possible in C #. <br>
 <img src="https://github.com/Codeer-Software/LambdicSql/blob/master/lambdicSqlImage.png" width="400">
 ## Getting Started
 LambdicSql from NuGet
