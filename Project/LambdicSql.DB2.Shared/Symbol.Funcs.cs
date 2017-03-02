@@ -122,28 +122,12 @@ namespace LambdicSql.DB2
         public static T1 Round<T1, T2>(T1 target, T2 digit) { throw new InvalitContextException(nameof(Round)); }
 
         /// <summary>
-        /// CONCAT function.
-        /// </summary>
-        /// <param name="targets">A string value to concatenate to the other values.</param>
-        /// <returns>concatenated result.</returns>
-        [FuncStyleConverter]
-        public static string Concat(params string[] targets) { throw new InvalitContextException(nameof(Concat)); }
-
-        /// <summary>
         /// LENGTH function.
         /// </summary>
         /// <param name="target">target.</param>
         /// <returns>String length.</returns>
         [FuncStyleConverter]
         public static int Length(object target) { throw new InvalitContextException(nameof(Length)); }
-
-        /// <summary>
-        /// LEN function.
-        /// </summary>
-        /// <param name="target">target.</param>
-        /// <returns>String length.</returns>
-        [FuncStyleConverter]
-        public static int Len(object target) { throw new InvalitContextException(nameof(Len)); }
 
         /// <summary>
         /// LOWER function.
@@ -180,24 +164,6 @@ namespace LambdicSql.DB2
         /// <returns>Part of a text.</returns>
         [FuncStyleConverter]
         public static string Substring(object target, object startIndex, object length) { throw new InvalitContextException(nameof(Substring)); }
-
-        /// <summary>
-        /// EXTRACT function.
-        /// </summary>
-        /// <param name="element">Part type.</param>
-        /// <param name="src">The date data.</param>
-        /// <returns>A part from the date data.</returns>
-        [MethodFormatConverter(Format = "EXTRACT(|[0] FROM [1])")]
-        public static double Extract(DateTimeElement element, DateTime src) { throw new InvalitContextException(nameof(Extract)); }
-
-        /// <summary>
-        /// DATEPART function.
-        /// </summary>
-        /// <param name="element">Part type.</param>
-        /// <param name="src">The date data.</param>
-        /// <returns>A part from the date data.</returns>
-        [FuncStyleConverter]
-        public static int DatePart(DateTimeElement element, DateTime src) { throw new InvalitContextException(nameof(Extract)); }
 
         /// <summary>
         /// CAST function.

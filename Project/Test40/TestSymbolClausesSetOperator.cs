@@ -100,8 +100,6 @@ FROM tbl_staff");
         [TestMethod]
         public void Test_Intersect()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer, TargetDB.Oracle, TargetDB.Postgre, TargetDB.SQLite, TargetDB.DB2)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(Asterisk(db.tbl_staff)).From(db.tbl_staff).
                 Intersect().
@@ -120,8 +118,6 @@ FROM tbl_staff");
         [TestMethod]
         public void Test_Intersect_Start()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer, TargetDB.Oracle, TargetDB.Postgre, TargetDB.SQLite, TargetDB.DB2)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(Asterisk(db.tbl_staff)).From(db.tbl_staff)
                  + Intersect() +
@@ -140,8 +136,6 @@ FROM tbl_staff");
         [TestMethod]
         public void Test_Except()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer, TargetDB.Postgre, TargetDB.SQLite, TargetDB.DB2)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(Asterisk(db.tbl_staff)).From(db.tbl_staff).
                 Except().
@@ -162,8 +156,6 @@ WHERE (tbl_staff.id) = (@p_0)",
         [TestMethod]
         public void Test_Except_Start()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer, TargetDB.Postgre, TargetDB.SQLite, TargetDB.DB2)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(Asterisk(db.tbl_staff)).From(db.tbl_staff)
                  + Except() +
@@ -184,8 +176,6 @@ WHERE (tbl_staff.id) = (@p_0)",
         [TestMethod]
         public void Test_Except_All()
         {
-            if (!_connection.IsTarget(TargetDB.Postgre, TargetDB.DB2)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(Asterisk(db.tbl_staff)).From(db.tbl_staff).
                 Except(All()).
@@ -206,8 +196,6 @@ WHERE (tbl_staff.id) = (@p_0)",
         [TestMethod]
         public void Test_Except_All_Start()
         {
-            if (!_connection.IsTarget(TargetDB.Postgre, TargetDB.DB2)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(Asterisk(db.tbl_staff)).From(db.tbl_staff)
                 + Except(All()) +
@@ -228,8 +216,6 @@ WHERE (tbl_staff.id) = (@p_0)",
         [TestMethod]
         public void Test_Minus()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer, TargetDB.Oracle, TargetDB.DB2)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(Asterisk(db.tbl_staff)).From(db.tbl_staff).
                 Minus().
@@ -250,8 +236,6 @@ WHERE (tbl_staff.id) = (@p_0)",
         [TestMethod]
         public void Test_Minus_Start()
         {
-            if (!_connection.IsTarget(TargetDB.SqlServer, TargetDB.Oracle, TargetDB.DB2)) return;
-
             var sql = Db<DB>.Sql(db =>
                 Select(Asterisk(db.tbl_staff)).From(db.tbl_staff)
                 + Minus() +

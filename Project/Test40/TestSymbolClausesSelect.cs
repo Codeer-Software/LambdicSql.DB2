@@ -75,51 +75,6 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
-        public void Test_top_selected()
-        {
-            if (!_connection.IsTarget(TargetDB.SqlServer)) return;
-
-            var sql = Db<DB>.Sql(db =>
-                Select(Top(1), new SelectData
-                {
-                    PaymentDate = db.tbl_remuneration.payment_date,
-                    Money = db.tbl_remuneration.money,
-                }).
-                From(db.tbl_remuneration));
-
-            var datas = _connection.Query(sql).ToList();
-            Assert.IsTrue(0 < datas.Count);
-            AssertEx.AreEqual(sql, _connection,
- @"SELECT TOP 1
-	tbl_remuneration.payment_date AS PaymentDate,
-	tbl_remuneration.money AS Money
-FROM tbl_remuneration");
-        }
-
-        [TestMethod]
-        public void Test_before_top_selected()
-        {
-            if (!_connection.IsTarget(TargetDB.SqlServer)) return;
-
-            var sql = Db<DB>.Sql(db =>
-                Empty().
-                Select(Top(1), new SelectData
-                {
-                    PaymentDate = db.tbl_remuneration.payment_date,
-                    Money = db.tbl_remuneration.money,
-                }).
-                From(db.tbl_remuneration));
-
-            var datas = _connection.Query(sql).ToList();
-            Assert.IsTrue(0 < datas.Count);
-            AssertEx.AreEqual(sql, _connection,
- @"SELECT TOP 1
-	tbl_remuneration.payment_date AS PaymentDate,
-	tbl_remuneration.money AS Money
-FROM tbl_remuneration");
-        }
-
-        [TestMethod]
         public void Test_asterisk()
         {
             var sql = Db<DB>.Sql(db =>
@@ -178,72 +133,6 @@ FROM tbl_remuneration");
         }
 
         [TestMethod]
-        public void Test_top_astrisk()
-        {
-            if (!_connection.IsTarget(TargetDB.SqlServer)) return;
-
-            var sql = Db<DB>.Sql(db =>
-                Select(Top(2), Asterisk()).
-                From(db.tbl_remuneration));
-
-            var datas = _connection.Query<Remuneration>(sql).ToList();
-            Assert.IsTrue(0 < datas.Count);
-            AssertEx.AreEqual(sql, _connection,
-@"SELECT TOP 2 *
-FROM tbl_remuneration");
-        }
-
-        [TestMethod]
-        public void Test_before_top_astrisk()
-        {
-            if (!_connection.IsTarget(TargetDB.SqlServer)) return;
-
-            var sql = Db<DB>.Sql(db =>
-                Empty().
-                Select(Top(2), Asterisk()).
-                From(db.tbl_remuneration));
-
-            var datas = _connection.Query<Remuneration>(sql).ToList();
-            Assert.IsTrue(0 < datas.Count);
-            AssertEx.AreEqual(sql, _connection,
-@"SELECT TOP 2 *
-FROM tbl_remuneration");
-        }
-
-        [TestMethod]
-        public void Test_top_astriskT()
-        {
-            if (!_connection.IsTarget(TargetDB.SqlServer)) return;
-
-            var sql = Db<DB>.Sql(db =>
-                Select(Top(2), Asterisk<Remuneration>()).
-                From(db.tbl_remuneration));
-
-            var datas = _connection.Query(sql).ToList();
-            Assert.IsTrue(0 < datas.Count);
-            AssertEx.AreEqual(sql, _connection,
-@"SELECT TOP 2 *
-FROM tbl_remuneration");
-        }
-
-        [TestMethod]
-        public void Test_before_top_astriskT()
-        {
-            if (!_connection.IsTarget(TargetDB.SqlServer)) return;
-
-            var sql = Db<DB>.Sql(db =>
-                Empty().
-                Select(Top(2), Asterisk<Remuneration>()).
-                From(db.tbl_remuneration));
-
-            var datas = _connection.Query(sql).ToList();
-            Assert.IsTrue(0 < datas.Count);
-            AssertEx.AreEqual(sql, _connection,
-@"SELECT TOP 2 *
-FROM tbl_remuneration");
-        }
-        
-        [TestMethod]
         public void Test_predicate_selected()
         {
             var sql = Db<DB>.Sql(db =>
@@ -279,53 +168,6 @@ FROM tbl_remuneration");
             Assert.IsTrue(0 < datas.Count);
             AssertEx.AreEqual(sql, _connection,
 @"SELECT DISTINCT
-	tbl_remuneration.payment_date AS PaymentDate,
-	tbl_remuneration.money AS Money
-FROM tbl_remuneration");
-        }
-        
-        [TestMethod]
-        public void Test_predicate_top_selected()
-        {
-            if (!_connection.IsTarget(TargetDB.SqlServer)) return;
-
-            var sql = Db<DB>.Sql(db =>
-                Select(All(), Top(1), 
-                new SelectData
-                {
-                    PaymentDate = db.tbl_remuneration.payment_date,
-                    Money = db.tbl_remuneration.money,
-                }).
-                From(db.tbl_remuneration));
-
-            var datas = _connection.Query(sql).ToList();
-            Assert.IsTrue(0 < datas.Count);
-            AssertEx.AreEqual(sql, _connection,
-@"SELECT ALL TOP 1
-	tbl_remuneration.payment_date AS PaymentDate,
-	tbl_remuneration.money AS Money
-FROM tbl_remuneration");
-        }
-
-        [TestMethod]
-        public void Test_before_predicate_top_selected()
-        {
-            if (!_connection.IsTarget(TargetDB.SqlServer)) return;
-
-            var sql = Db<DB>.Sql(db =>
-                Empty().
-                Select(Distinct(), Top(1), 
-                new SelectData
-                {
-                    PaymentDate = db.tbl_remuneration.payment_date,
-                    Money = db.tbl_remuneration.money,
-                }).
-                From(db.tbl_remuneration));
-
-            var datas = _connection.Query(sql).ToList();
-            Assert.IsTrue(0 < datas.Count);
-            AssertEx.AreEqual(sql, _connection,
-@"SELECT DISTINCT TOP 1
 	tbl_remuneration.payment_date AS PaymentDate,
 	tbl_remuneration.money AS Money
 FROM tbl_remuneration");
@@ -386,72 +228,6 @@ FROM tbl_remuneration");
             Assert.IsTrue(0 < datas.Count);
             AssertEx.AreEqual(sql, _connection,
 @"SELECT DISTINCT *
-FROM tbl_remuneration");
-        }
-
-        [TestMethod]
-        public void Test_predicate_top_asterisk()
-        {
-            if (!_connection.IsTarget(TargetDB.SqlServer)) return;
-
-            var sql = Db<DB>.Sql(db =>
-                Select(All(), Top(1), Asterisk()).
-                From(db.tbl_remuneration));
-
-            var datas = _connection.Query<Remuneration>(sql).ToList();
-            Assert.IsTrue(0 < datas.Count);
-            AssertEx.AreEqual(sql, _connection,
-@"SELECT ALL TOP 1 *
-FROM tbl_remuneration");
-        }
-
-        [TestMethod]
-        public void Test_before_predicate_top_asterisk()
-        {
-            if (!_connection.IsTarget(TargetDB.SqlServer)) return;
-
-            var sql = Db<DB>.Sql(db =>
-                Empty().
-                Select(Distinct(), Top(1), Asterisk()).
-                From(db.tbl_remuneration));
-
-            var datas = _connection.Query<Remuneration>(sql).ToList();
-            Assert.IsTrue(0 < datas.Count);
-            AssertEx.AreEqual(sql, _connection,
-@"SELECT DISTINCT TOP 1 *
-FROM tbl_remuneration");
-        }
-
-        [TestMethod]
-        public void Test_predicate_top_asteriskT()
-        {
-            if (!_connection.IsTarget(TargetDB.SqlServer)) return;
-
-            var sql = Db<DB>.Sql(db =>
-                Select(All(), Top(1), Asterisk<Remuneration>()).
-                From(db.tbl_remuneration));
-
-            var datas = _connection.Query(sql).ToList();
-            Assert.IsTrue(0 < datas.Count);
-            AssertEx.AreEqual(sql, _connection,
-@"SELECT ALL TOP 1 *
-FROM tbl_remuneration");
-        }
-
-        [TestMethod]
-        public void Test_before_predicate_top_asteriskT()
-        {
-            if (!_connection.IsTarget(TargetDB.SqlServer)) return;
-
-            var sql = Db<DB>.Sql(db =>
-                Empty().
-                Select(Distinct(), Top(1), Asterisk<Remuneration>()).
-                From(db.tbl_remuneration));
-
-            var datas = _connection.Query(sql).ToList();
-            Assert.IsTrue(0 < datas.Count);
-            AssertEx.AreEqual(sql, _connection,
-@"SELECT DISTINCT TOP 1 *
 FROM tbl_remuneration");
         }
 
