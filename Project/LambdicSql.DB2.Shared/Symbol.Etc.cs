@@ -8,7 +8,7 @@ namespace LambdicSql.DB2
     /// <summary>
     /// SQL Symbols.
     /// It can only be used within methods of the LambdicSql.Db class.
-    /// Use[using static LambdicSql.Keywords;], you can use to write natural SQL.
+    /// Use[using static LambdicSql.DB2.Symbol;], you can use to write natural SQL.
     /// </summary>
     public static partial class Symbol
     {
@@ -78,7 +78,7 @@ namespace LambdicSql.DB2
         /// </summary>
         /// <returns>Date of executing SQL.</returns>
         [CurrentDateTimeConverter(Name = "TIME")]
-        public static TimeSpan Current_Time() { throw new InvalitContextException(nameof(DateTimeOffset)); }
+        public static TimeSpan Current_Time() { throw new InvalitContextException(nameof(Current_Time)); }
 
         /// <summary>
         /// CURRENT_TIMESTAMP Keyword.

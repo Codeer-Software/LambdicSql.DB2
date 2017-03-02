@@ -5,7 +5,7 @@ namespace LambdicSql.DB2
 {
     /// <summary>
     /// Data type.
-    /// It can only be used within lambda of the LambdicSql.
+    /// It can only be used within methods of the LambdicSql.Db class.
     /// </summary>
     public static class DataType
     {
@@ -73,6 +73,32 @@ namespace LambdicSql.DB2
         /// <returns>DBCLOB</returns>
         [ClauseStyleConverter]
         public static DataTypeElement DbClob() { throw new InvalitContextException(nameof(DbClob)); }
+
+
+        /// <summary>
+        /// DECIMAL
+        /// </summary>
+        /// <returns>DECIMAL</returns>
+        [ClauseStyleConverter]
+        public static DataTypeElement Decimal() { throw new InvalitContextException(nameof(Decimal)); }
+
+        /// <summary>
+        /// DECIMAL
+        /// </summary>
+        /// <param name="precision">precision</param>
+        /// <returns>DECIMAL</returns>
+        [ClauseStyleConverter]
+        public static DataTypeElement Decimal(int precision) { throw new InvalitContextException(nameof(Decimal)); }
+
+
+        /// <summary>
+        /// DECIMAL
+        /// </summary>
+        /// <param name="precision">precision</param>
+        /// <param name="scale">scale</param>
+        /// <returns>DECIMAL</returns>
+        [ClauseStyleConverter]
+        public static DataTypeElement Decimal(int precision, int scale) { throw new InvalitContextException(nameof(Decimal)); }
 
         /// <summary>
         /// DOUBLE

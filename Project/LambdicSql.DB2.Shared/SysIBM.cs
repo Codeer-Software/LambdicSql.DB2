@@ -5,7 +5,7 @@ namespace LambdicSql.DB2
 {
     /// <summary>
     /// SYSIBM keyword.
-    /// It can only be used within lambda of the LambdicSql.
+    /// It can only be used within methods of the LambdicSql.Db class.
     /// </summary>
     public static class SysIBM
     {
