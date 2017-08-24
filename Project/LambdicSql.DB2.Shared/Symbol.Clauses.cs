@@ -1,5 +1,6 @@
 using LambdicSql.ConverterServices;
 using LambdicSql.ConverterServices.SymbolConverters;
+using LambdicSql.DB2.ConverterAttributes;
 using LambdicSql.Specialized.SymbolConverters;
 
 namespace LambdicSql.DB2
@@ -851,7 +852,7 @@ namespace LambdicSql.DB2
         /// WITH clause.
         /// </summary>
         /// <param name="subQuerys">sub querys.</param>
-        /// <returns></returns>
+        /// <returns>Clause.</returns>
         [WithConverter]
         public static Clause<Non> With(params Sql[] subQuerys) { throw new InvalitContextException(nameof(With)); }
 
@@ -864,7 +865,7 @@ namespace LambdicSql.DB2
         /// <returns>Clause.</returns>
         [WithConverter]
         public static Clause<T> With<T>(SqlRecursiveArguments<T> args, Sql subQuery) { throw new InvalitContextException(nameof(With)); }
-
+        
         /// <summary>
         /// CREATE TABLE clause.
         /// </summary>
