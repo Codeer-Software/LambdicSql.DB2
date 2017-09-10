@@ -522,5 +522,5 @@ SELECT
 	tbl_remuneration.money + @bonus AS money
 FROM tbl_remuneration 
     JOIN tbl_staff ON tbl_staff.id = tbl_remuneration.staff_id
-WHERE ((@p_0) < (tbl_remuneration.money)) AND ((tbl_remuneration.money) < (@p_1))
+WHERE @p_0 < tbl_remuneration.money AND tbl_remuneration.money < @p_1
 ```
