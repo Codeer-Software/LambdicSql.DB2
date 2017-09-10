@@ -149,7 +149,7 @@ FROM tbl_staff
 EXCEPT
 SELECT *
 FROM tbl_staff
-WHERE (tbl_staff.id) = (@p_0)",
+WHERE tbl_staff.id = @p_0",
 1);
         }
 
@@ -169,7 +169,7 @@ FROM tbl_staff
 EXCEPT
 SELECT *
 FROM tbl_staff
-WHERE (tbl_staff.id) = (@p_0)",
+WHERE tbl_staff.id = @p_0",
 1);
         }
 
@@ -189,7 +189,7 @@ FROM tbl_staff
 EXCEPT ALL
 SELECT *
 FROM tbl_staff
-WHERE (tbl_staff.id) = (@p_0)",
+WHERE tbl_staff.id = @p_0",
 1);
         }
 
@@ -209,7 +209,7 @@ FROM tbl_staff
 EXCEPT ALL
 SELECT *
 FROM tbl_staff
-WHERE (tbl_staff.id) = (@p_0)",
+WHERE tbl_staff.id = @p_0",
 1);
         }
 
@@ -229,7 +229,7 @@ FROM tbl_staff
 MINUS
 SELECT *
 FROM tbl_staff
-WHERE (tbl_staff.id) = (@p_0)",
+WHERE tbl_staff.id = @p_0",
 1);
         }
 
@@ -249,7 +249,7 @@ FROM tbl_staff
 MINUS
 SELECT *
 FROM tbl_staff
-WHERE (tbl_staff.id) = (@p_0)",
+WHERE tbl_staff.id = @p_0",
 1);
         }
     }

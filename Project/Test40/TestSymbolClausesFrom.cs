@@ -98,7 +98,7 @@ FROM tbl_remuneration");
 	tbl_remuneration.payment_date AS PaymentDate,
 	tbl_remuneration.money AS Money
 FROM tbl_remuneration, tbl_staff
-WHERE (tbl_remuneration.staff_id) = (tbl_staff.id)");
+WHERE tbl_remuneration.staff_id = tbl_staff.id");
         }
 
         [TestMethod]
@@ -120,7 +120,7 @@ WHERE (tbl_remuneration.staff_id) = (tbl_staff.id)");
 	tbl_remuneration.payment_date AS PaymentDate,
 	tbl_remuneration.money AS Money
 FROM tbl_remuneration
-	JOIN tbl_staff ON (tbl_remuneration.staff_id) = (tbl_staff.id)");
+	JOIN tbl_staff ON tbl_remuneration.staff_id = tbl_staff.id");
         }
 
         [TestMethod]
@@ -142,7 +142,7 @@ FROM tbl_remuneration
 	tbl_remuneration.payment_date AS PaymentDate,
 	tbl_remuneration.money AS Money
 FROM tbl_remuneration
-	JOIN tbl_staff ON (tbl_remuneration.staff_id) = (tbl_staff.id)");
+	JOIN tbl_staff ON tbl_remuneration.staff_id = tbl_staff.id");
         }
 
         [TestMethod]
@@ -208,7 +208,7 @@ FROM tbl_remuneration");
 	tbl_remuneration.payment_date AS PaymentDate,
 	tbl_remuneration.money AS Money
 FROM tbl_remuneration
-	LEFT JOIN tbl_staff ON (tbl_remuneration.staff_id) = (tbl_staff.id)");
+	LEFT JOIN tbl_staff ON tbl_remuneration.staff_id = tbl_staff.id");
         }
 
         [TestMethod]
@@ -230,7 +230,7 @@ FROM tbl_remuneration
 	tbl_remuneration.payment_date AS PaymentDate,
 	tbl_remuneration.money AS Money
 FROM tbl_remuneration
-	LEFT JOIN tbl_staff ON (tbl_remuneration.staff_id) = (tbl_staff.id)");
+	LEFT JOIN tbl_staff ON tbl_remuneration.staff_id = tbl_staff.id");
         }
 
         [TestMethod]
@@ -252,7 +252,7 @@ FROM tbl_remuneration
 	tbl_remuneration.payment_date AS PaymentDate,
 	tbl_remuneration.money AS Money
 FROM tbl_remuneration
-	RIGHT JOIN tbl_staff ON (tbl_remuneration.staff_id) = (tbl_staff.id)");
+	RIGHT JOIN tbl_staff ON tbl_remuneration.staff_id = tbl_staff.id");
         }
 
         [TestMethod]
@@ -274,7 +274,7 @@ FROM tbl_remuneration
 	tbl_remuneration.payment_date AS PaymentDate,
 	tbl_remuneration.money AS Money
 FROM tbl_remuneration
-	RIGHT JOIN tbl_staff ON (tbl_remuneration.staff_id) = (tbl_staff.id)");
+	RIGHT JOIN tbl_staff ON tbl_remuneration.staff_id = tbl_staff.id");
         }
 
         [TestMethod]
@@ -296,7 +296,7 @@ FROM tbl_remuneration
 	tbl_remuneration.payment_date AS PaymentDate,
 	tbl_remuneration.money AS Money
 FROM tbl_remuneration
-	FULL JOIN tbl_staff ON (tbl_remuneration.staff_id) = (tbl_staff.id)");
+	FULL JOIN tbl_staff ON tbl_remuneration.staff_id = tbl_staff.id");
         }
 
         [TestMethod]
@@ -318,7 +318,7 @@ FROM tbl_remuneration
 	tbl_remuneration.payment_date AS PaymentDate,
 	tbl_remuneration.money AS Money
 FROM tbl_remuneration
-	FULL JOIN tbl_staff ON (tbl_remuneration.staff_id) = (tbl_staff.id)");
+	FULL JOIN tbl_staff ON tbl_remuneration.staff_id = tbl_staff.id");
         }
 
         [TestMethod]
@@ -438,7 +438,7 @@ FROM
 	expRemuneration.payment_date AS PaymentDate,
 	expRemuneration.money AS Money
 FROM tbl_remuneration expRemuneration, tbl_staff expStaff
-WHERE (expRemuneration.staff_id) = (expStaff.id)");
+WHERE expRemuneration.staff_id = expStaff.id");
         }
 
         [TestMethod]
@@ -464,7 +464,7 @@ WHERE (expRemuneration.staff_id) = (expStaff.id)");
 	tbl_remuneration.payment_date AS PaymentDate,
 	tbl_remuneration.money AS Money
 FROM tbl_remuneration
-	JOIN tbl_staff expStaff ON (tbl_remuneration.staff_id) = (expStaff.id)");
+	JOIN tbl_staff expStaff ON tbl_remuneration.staff_id = expStaff.id");
         }
 
         [TestMethod]
@@ -494,7 +494,7 @@ FROM tbl_staff
 		(SELECT *
 		FROM tbl_remuneration) sub
 		ON
-		(sub.staff_id) = (tbl_staff.id)");
+		sub.staff_id = tbl_staff.id");
         }
     }
 }
